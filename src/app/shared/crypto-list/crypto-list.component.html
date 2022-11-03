@@ -1,0 +1,22 @@
+<!-- Search -->
+<div class="search">
+    <input class="inputSearch" type="text" [(ngModel)]="filtro" placeholder="Buscar Crypto...">
+  
+    <img src="assets/icons/Search.png" alt="Buscar Crypto">
+</div>
+
+<div *ngIf="cryptos">
+    <div class="crypto" *ngFor="let crypto of objectKeys(cryptos)">
+    <div *ngIf="crypto.includes(filtro.toUpperCase())">
+    <a class="crypto">
+
+            <span class="left">{{ crypto }}</span>
+            <span class="right">{{ cryptos[crypto].USD | currency:'USD' :true }}</span>
+      
+
+    </a>
+    </div>
+</div>
+</div>
+<!-- <P>{{filtro}}</P> -->
+
